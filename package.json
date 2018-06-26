@@ -1,0 +1,15 @@
+{
+  "name": "hello-egg",
+  "version": "1.0.0",
+  "description": "POC: Electron. Meu ovo.",
+  "main": "main.js",
+  "repository": "https://github.com/EdnilsonRobert/hello-electron.git",
+  "author": "Ednilson Robert <ednilsonrobert@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+      "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^2.0.3"
+  }
+}
