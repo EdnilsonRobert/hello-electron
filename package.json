@@ -1,15 +1,25 @@
 {
-  "name": "hello-egg",
-  "version": "1.0.0",
-  "description": "POC: Electron. Meu ovo.",
+  "name": "hello-electron",
+  "version": "0.0.1",
+  "description": "Repositório para estudos sobre Electron",
   "main": "main.js",
-  "repository": "https://github.com/EdnilsonRobert/hello-electron.git",
-  "author": "Ednilson Robert <ednilsonrobert@gmail.com>",
-  "license": "MIT",
   "scripts": {
-      "start": "electron ."
+    "start": "electron ."
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdnilsonRobert/hello-electron.git"
+  },
+  "author": "EdnilsonRobert <frontend@ednilsonrobert.dev>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EdnilsonRobert/hello-electron/issues"
+  },
+  "homepage": "https://github.com/EdnilsonRobert/hello-electron#readme",
   "devDependencies": {
-    "electron": "^2.0.3"
+    "electron": "^6.0.4"
+  },
+  "dependencies": {
+    "node-notifier": "^5.4.3"
   }
 }
