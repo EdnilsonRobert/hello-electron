@@ -1,11 +1,14 @@
-# POC: Electron
+# Hello, Electron.
 
-Iniciando mini projeto para conhecer a ferramenta Electron.
+## Repositório para estudos sobre Electron
 
-> TODO: <br>
-- [ ] Entender o flash branco entre as mudanças de páginas
-- [ ] Adicionar eventos
+  - [x] Notificação habilitada (Linux Mint)
+
+> TODO:
+
+  - [ ] Entender o flash branco entre as mudanças de páginas
+  - [ ] Adicionar eventos
 
 ---
 
-Sugestões? Envie email para <have.fun@css.cafe>.
+Sugestões? Envie email para <frontend@ednilsonrobert.dev>

@@ -1,30 +1,47 @@
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow} = require('electron'),
+      notifier = require('node-notifier'),
+      path = require('path')
 
-let win
+let mainWindow
 
-function createWindow() {
-    win = new BrowserWindow({
-        width: 800,
-        height: 600,
-        // frame: false
-    });
-    win.loadFile('./egg/my-egg.html');
-    // win.webContents.openDevTools()
-    win.on('closed', function() {
-        win = null;
-    });
+let createWindow = () => {
+  mainWindow = new BrowserWindow({
+    width: 960,
+    height: 640
+    // frame: false
+  })
+  mainWindow.loadFile('./egg/my-egg.html')
+  // mainWindow.loadURL('http://localhost:3000')
+  // mainWindow.webContents.openDevTools()
+  mainWindow.on('closed', () => {
+    mainWindow = null
+  })
 }
 
-app.on('ready', createWindow);
+let createNotification = () => {
+  notifier.notify({
+    title: 'Electron',
+    message: 'Works like a charm.',
+    icon: path.join(__dirname, 'egg/favicon.svg'),
+    sound: true,
+    wait: false
+  }, (error, response) => {
+    console.log(`Error`)
+  })
+}
 
-app.on('window-all-closed', function() {
-    if(process.platform !== 'darwin') {
-        app.quit();
-    }
-});
+app.on('ready', () => {
+  createWindow()
+  createNotification()
+})
 
-app.on('activate', function() {
-    if(win === null) {
-        createWindow();
-    }
-});
+app.on('activate', () => {
+  if(mainWindow === null) {
+    createWindow()
+    createNotification()
+  }
+})
+
+app.on("window-all-closed", () => {
+  process.platform !== "darwin" && app.quit()
+})
