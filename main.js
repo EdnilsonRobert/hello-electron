@@ -7,7 +7,8 @@ let mainWindow
 let createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 960,
-    height: 640
+    height: 640,
+    icon: './egg/favicon.svg'
     // frame: false
   })
   mainWindow.loadFile('./egg/my-egg.html')
@@ -15,6 +16,8 @@ let createWindow = () => {
   // mainWindow.webContents.openDevTools()
   mainWindow.on('closed', () => {
     mainWindow = null
+  })
+  mainWindow.once('ready-to-show', () => {
   })
 }
 
@@ -42,6 +45,19 @@ app.on('activate', () => {
   }
 })
 
-app.on("window-all-closed", () => {
-  process.platform !== "darwin" && app.quit()
+app.on('window-all-closed', () => {
+  process.platform !== 'darwin' && app.quit()
+})
+
+app.on('before-quit', () => {
+})
+
+app.on('will-quit', () => {
+})
+
+app.on('quit', () => {
+})
+
+app.on('will-finish-launching', () => {
+  // No Windows e Linux é igual ao evento 'ready'
 })

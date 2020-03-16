@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/EdnilsonRobert/hello-electron#readme",
   "devDependencies": {
-    "electron": "^6.0.4"
+    "electron": "^8.1.1"
   },
   "dependencies": {
-    "node-notifier": "^5.4.3"
+    "node-notifier": "^6.0.0"
   }
 }
